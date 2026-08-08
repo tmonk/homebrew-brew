@@ -5,7 +5,8 @@ class Tectdist < Formula
   # sha256 of the archive as fetched by Homebrew (ghcr.io mirror of the
   # GitHub-generated tarball).  GitHub's codeload gzip is regenerated and
   # NOT byte-stable, so verify with `brew fetch` rather than curl:
-  #   brew fetch --force tmonk/tectdist/tectdist && shasum -a 256 $(ls -t ~/Library/Caches/Homebrew/downloads/*tectdist-0.1.0.tar.gz | head -1)
+  #   brew fetch --force tmonk/tectdist/tectdist
+  #   shasum -a 256 $(ls -t ~/Library/Caches/Homebrew/downloads/*tectdist-0.1.0.tar.gz | head -1)
   sha256 "31c7e188c203c8c3e04980e6f7a9d077fff46e94c7fec1bf0efa696bf2445163"
   license "AGPL-3.0-only"
 
