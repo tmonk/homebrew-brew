@@ -12,8 +12,10 @@ sha256-pinned CPAN module resources, mirroring homebrew-core's own biber
 formula) — so biblatex works out of the box on every platform, with no extra
 packages and no prebuilt binaries.  It declares `tectonic`, `ghostscript`,
 `poppler`, `qpdf`, `perl`, `libxml2`, `libxslt` and `openssl@3` as
-dependencies and never shadows their binaries.  The first install builds
-biber from source (~10-20 minutes).
+dependencies and never shadows their binaries.  **Prebuilt bottles** are
+published (see the project README, "Installation"): installs pour in
+seconds; from-source builds are the fallback (measured 2m43s cold on an
+M-class Mac).
 
 ## Version pairing
 
