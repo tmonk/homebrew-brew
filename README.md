@@ -4,11 +4,23 @@
 TeX distribution backed by [Tectonic](https://tectonic-typesetting.github.io/).
 
 This tap (`tmonk/brew` → [github.com/tmonk/homebrew-brew](https://github.com/tmonk/homebrew-brew))
-ships the `tectdist` formula: it installs the built single-file zipapp plus a
+ships the `tectdist` formula: it installs the built single-file zipapp, a
 symlink farm of the classic TeX tool names (`pdflatex`, `latexmk`,
-`kpsewhich`, `biber`, …), all dispatching to the single `tectdist`
-executable.  It declares `tectonic`, `ghostscript`, `poppler` and `qpdf` as
-dependencies and never shadows their binaries.
+`kpsewhich`, …) dispatching to the single `tectdist` executable, and the
+**real bundled `biber` 2.17 binary** (official prebuilt binary, self-hosted
+release asset) — so biblatex works out of the box, with no extra packages.
+It declares `tectonic`, `ghostscript`, `poppler` and `qpdf` as dependencies
+and never shadows their binaries.
+
+## Version pairing
+
+Each tectdist release is one matched unit and REQUIRES a specific tectonic
+version at install time (asserted by the formula; a mismatched pair breaks
+biblatex).  This release: **tectonic 0.17.x → biblatex 3.17 → biber 2.17**.
+Homebrew's core `biber` (2.21) is NOT compatible with that biblatex — the
+bundled one is the one to use.  A weekly GitHub Actions watcher opens an
+issue when brew's tectonic moves, so the matched next release ships before
+users hit a mismatch on `brew upgrade`.
 
 ## How do I install?
 
