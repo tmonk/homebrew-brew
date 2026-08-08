@@ -1,13 +1,22 @@
-# Tmonk Tectdist Tap
+# Tmonk Tectdist Tap -> tectdist
 
 Homebrew tap for [tectdist](https://github.com/tmonk/tectdist) — a
 Standard-TeX-compatible TeX distribution backed by
-[Tectonic](https://tectonic-typesetting.github.io/).  The formula installs
-the built zipapp plus a symlink farm of the classic TeX tool names
-(`pdflatex`, `latexmk`, `kpsewhich`, `biber`, …), all dispatching to the
-single `tectdist` executable.
+[Tectonic](https://tectonic-typesetting.github.io/).
+
+| Tap | Formula |
+|-----|---------|
+| `tmonk/tectdist` | `tectdist` |
+
+The `tectdist` formula installs the built single-file zipapp plus a symlink
+farm of the classic TeX tool names (`pdflatex`, `latexmk`, `kpsewhich`,
+`biber`, …), all dispatching to the single `tectdist` executable.  It
+declares `tectonic`, `ghostscript`, `poppler` and `qpdf` as dependencies and
+never shadows their binaries.
 
 ## How do I install?
+
+Tap and install:
 
 ```sh
 brew tap tmonk/tectdist
@@ -27,9 +36,7 @@ tap "tmonk/tectdist"
 brew "tectdist"
 ```
 
-The formula declares `tectonic`, `ghostscript`, `poppler` and `qpdf` as
-dependencies and does not shadow their binaries.  If another TeX
-installation already provides some of the farm names, run
+If another TeX installation already provides some of the farm names, run
 `brew link --overwrite tectdist`.  If this is your first time using a
 non-official tap and Homebrew asks for explicit trust:
 
